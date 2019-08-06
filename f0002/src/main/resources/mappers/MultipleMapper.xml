@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cw.f0002.dao.MultipleMapper" >
+
+    <select id="getMultipleById" resultType="com.cw.f0002.entity.TMultiple">
+        SELECT m_id, s_id, content FROM t_multiple WHERE m_id= #{id} limit 0,1
+    </select>
+
+
+    <select id="getMultipleBySingleId" resultType="com.cw.f0002.entity.TMultiple">
+        SELECT m_id, s_id, content FROM t_multiple WHERE s_id= #{id}
+    </select>
+</mapper>

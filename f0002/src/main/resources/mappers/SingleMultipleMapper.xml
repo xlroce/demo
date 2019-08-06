@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cw.f0002.dao.SingleMultipleMapper" >
+
+
+
+    <resultMap id="singleMultipleResult" type="com.cw.f0002.vo.SingleMultiple">
+        <id column="id" property="id" />
+<!--        <result column="field" property="field"/>-->
+        <collection property="multipleList" ofType="com.cw.f0002.entity.TMultiple" column="id"
+                    select="com.cw.f0002.dao.MultipleMapper.getMultipleBySingleId">
+<!--            <id column="mid" property="mId"/>-->
+<!--            <result column="sid" property="sId"/>-->
+<!--            <result column="content" property="content" />-->
+        </collection>
+
+
+    </resultMap>
+    <select id="getSingleByIdWithMultiple" resultMap="singleMultipleResult" >
+        SELECT id, field FROM t_single WHERE id= #{id}
+    </select>
+
+</mapper>

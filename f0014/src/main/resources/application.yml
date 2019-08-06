@@ -1,0 +1,13 @@
+server:
+  port: 9014
+
+
+eureka:
+  instance:
+    hostname: localhost
+    appname: f0014
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

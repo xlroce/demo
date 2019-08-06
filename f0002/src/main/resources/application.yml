@@ -1,0 +1,18 @@
+server:
+  port: 9002
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3307/cw
+mybatis:
+  type-aliases-package: com.cw.f0002.entity
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    aggressive-lazy-loading: false
+    lazy-loading-enabled: true
